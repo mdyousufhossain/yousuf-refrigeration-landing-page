@@ -2,9 +2,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Preloader from "@/components/layout/Preloader";
-import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/homepage/Hero";
-import Footer from "@/components/layout/Footer";
 import Categories from "@/components/sections/homepage/Categories";
 import WhatWeDo from "@/components/sections/homepage/WhatWeDo";
 import ProductSection from "@/components/sections/homepage/Product";
@@ -30,8 +28,7 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <Navbar />
-          
+     
           {/* Hero with Featured Product Slider */}
           <Hero />
           
@@ -64,8 +61,6 @@ export default function Home() {
               </button>
             </div>
           </section>
-          
-          <Footer />
         </motion.div>
       )}
     </main>

@@ -1,35 +1,32 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { UtensilsCrossed, Refrigerator, Wind, Cog, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const solutions = [
   {
-    icon: UtensilsCrossed,
     title: "Restaurant Solutions",
     description: "Complete kitchen setups for restaurants, cafes, and food courts. From cooking stations to exhaust systems, we deliver turnkey solutions.",
     features: ["Commercial Cooking Equipment", "Ventilation Systems", "Food Prep Stations", "Custom Layout Design"],
-    color: "bg-gradient-to-br from-sky-500 to-blue-600"
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop"
   },
   {
-    icon: Refrigerator,
     title: "Kitchen Equipment",
     description: "Industrial-grade kitchen equipment manufactured with precision. Stainless steel builds that last decades of heavy use.",
     features: ["Bakery Ovens", "Industrial Stoves", "Prep Tables", "Storage Units"],
-    color: "bg-gradient-to-br from-blue-500 to-indigo-600"
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop"
   },
   {
-    icon: Wind,
     title: "Fridge & AC Solutions",
     description: "Cooling solutions for every scale. From small display fridges to industrial cold storage and commercial AC systems.",
     features: ["Display Refrigerators", "Walk-in Coolers", "Industrial AC", "Cold Storage"],
-    color: "bg-gradient-to-br from-cyan-500 to-sky-600"
+    image: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?q=80&w=800&auto=format&fit=crop"
   },
   {
-    icon: Cog,
     title: "Machines & Parts",
     description: "Genuine spare parts and machinery components. We maintain the largest inventory of refrigeration parts in Dhaka.",
     features: ["Compressors", "Motors & Fans", "Thermostats", "Electrical Components"],
-    color: "bg-gradient-to-br from-slate-600 to-slate-800"
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop"
   }
 ];
 
@@ -52,10 +49,10 @@ const cardVariants = {
 
 export default function WhatWeDo() {
   return (
-    <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
+    <section className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-sky-50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute top-1/4 right-0 w-80 h-80 bg-blue-50 rounded-full blur-3xl translate-x-1/2" />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-sky-100/50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-1/4 right-0 w-80 h-80 bg-blue-100/30 rounded-full blur-3xl translate-x-1/2" />
       
       <div className="max-w-7xl mx-auto px-6 relative">
         <motion.div
@@ -84,34 +81,41 @@ export default function WhatWeDo() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              className="group relative bg-slate-50 rounded-3xl p-8 hover:bg-white hover:shadow-2xl hover:shadow-sky-500/10 transition-all duration-500 border border-transparent hover:border-sky-100"
+              className="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-sky-500/10 transition-all duration-500 border border-slate-100"
             >
-              <div className="flex items-start gap-6">
-                <div className={`${solution.color} w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                  <solution.icon size={30} className="text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
-                    {solution.title}
-                  </h3>
-                  <p className="text-slate-600 mt-2 leading-relaxed">
-                    {solution.description}
-                  </p>
-                  
-                  <ul className="mt-5 grid grid-cols-2 gap-2">
-                    {solution.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-slate-500">
-                        <CheckCircle2 size={14} className="text-sky-500 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+              {/* Image */}
+              <div className="relative h-56 overflow-hidden">
+                <Image
+                  src={solution.image}
+                  alt={solution.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent" />
+                <h3 className="absolute bottom-4 left-6 text-2xl font-bold text-white">
+                  {solution.title}
+                </h3>
+              </div>
 
-                  <button className="mt-6 inline-flex items-center gap-2 text-sky-600 font-semibold group/btn">
-                    Learn More
-                    <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
-                </div>
+              {/* Content */}
+              <div className="p-6">
+                <p className="text-slate-600 leading-relaxed">
+                  {solution.description}
+                </p>
+                
+                <ul className="mt-5 grid grid-cols-2 gap-2">
+                  {solution.features.map((feature, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-slate-500">
+                      <CheckCircle2 size={14} className="text-sky-500 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <button className="mt-6 inline-flex items-center gap-2 text-sky-600 font-semibold group/btn">
+                  Learn More
+                  <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                </button>
               </div>
             </motion.div>
           ))}
