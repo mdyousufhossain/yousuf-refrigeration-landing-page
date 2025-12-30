@@ -12,19 +12,19 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-6">Core Products</h4>
           <ul className="space-y-4 text-sm">
-            <li><a href="#" className="hover:text-orange-400">Bakery Ovens</a></li>
-            <li><a href="#" className="hover:text-orange-400">Commercial Fridges</a></li>
-            <li><a href="#" className="hover:text-orange-400">Custom Food Carts</a></li>
-            <li><a href="#" className="hover:text-orange-400">Restaurant Displays</a></li>
+            <li><a href="#" className="hover:text-sky-400">Bakery Ovens</a></li>
+            <li><a href="#" className="hover:text-sky-400">Commercial Fridges</a></li>
+            <li><a href="#" className="hover:text-sky-400">Custom Food Carts</a></li>
+            <li><a href="#" className="hover:text-sky-400">Restaurant Displays</a></li>
           </ul>
         </div>
         <div>
           <h4 className="text-white font-semibold mb-6">Service & Support</h4>
           <ul className="space-y-4 text-sm">
-            <li><a href="#" className="hover:text-orange-400">AC Repair & Service</a></li>
-            <li><a href="#" className="hover:text-orange-400">Spare Parts Catalog</a></li>
-            <li><a href="#" className="hover:text-orange-400">Annual Maintenance</a></li>
-            <li><a href="#" className="hover:text-orange-400">Installation Guide</a></li>
+            <li><a href="#" className="hover:text-sky-400">AC Repair & Service</a></li>
+            <li><a href="#" className="hover:text-sky-400">Spare Parts Catalog</a></li>
+            <li><a href="#" className="hover:text-sky-400">Annual Maintenance</a></li>
+            <li><a href="#" className="hover:text-sky-400">Installation Guide</a></li>
           </ul>
         </div>
         <div>
